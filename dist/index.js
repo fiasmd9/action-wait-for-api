@@ -20,7 +20,7 @@ async function doFetch({
 
   let response = await fetch(url, { method, headers });
   core.error("Status Code : "+response.status);
-  if (response.status !== "200" && response.status !== "500" && response.status !== "504") {
+  if (response.status != "200" && response.status != "500" && response.status != "504") {
     throw new Error(
       `Wrong status ${response.status}, expected ${expectedStatus}`
     );
@@ -38,6 +38,7 @@ async function doFetch({
 
   
   if (response.status == "200") {
+    core.error("Change Approved");
   return true;
   }
 }
