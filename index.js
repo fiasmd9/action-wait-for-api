@@ -10,7 +10,7 @@ const { tryFetch } = require('./lib/try-fetch');
     let interval = parseInt(core.getInput('interval'));
     
 
-    core.debug(`=== Waiting for API response to continue. ===`);
+    core.error(`=== Waiting for API response to continue. ===`);
     core.debug(`URL: ${url}`);
     core.debug(`Method: ${method}`);
     core.debug(`Headers: ${headersString}`);
@@ -24,10 +24,7 @@ const { tryFetch } = require('./lib/try-fetch');
 
     let headers = headersString ? JSON.parse(headersString) : {};
     let start = +new Date();
-    var a=1;
-    if (a==1){
-    return true;
-    }
+    core.setFailed("Cancelled");
     await tryFetch({
       start,
       interval,
