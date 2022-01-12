@@ -3,7 +3,6 @@ const { tryFetch } = require('./lib/try-fetch');
 
 (async function () {
   try {
-    core.setFailed(new Error("Cancelled"));
     let method = core.getInput('method');
     let url = core.getInput('url');
     let headersString = core.getInput('headers');
