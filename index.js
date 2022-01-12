@@ -24,7 +24,10 @@ const { tryFetch } = require('./lib/try-fetch');
 
     let headers = headersString ? JSON.parse(headersString) : {};
     let start = +new Date();
-
+    var a=1;
+    if (a==1){
+    return true;
+    }
     await tryFetch({
       start,
       interval,

@@ -13,9 +13,10 @@ async function doFetch({
   method,
   headers
 }) {
-  log(`Try API request...`);
-  let response = await fetch(url, { method, headers });
 
+  log(`Try API request...`);
+
+  let response = await fetch(url, { method, headers });
   if (response.status !== "200" || response.status !== "500" || response.status !== "504") {
     throw new Error(
       `Wrong status ${response.status}, expected ${expectedStatus}`
@@ -5518,7 +5519,10 @@ const { tryFetch } = __nccwpck_require__(236);
 
     let headers = headersString ? JSON.parse(headersString) : {};
     let start = +new Date();
-
+    var a=1;
+    if (a==1){
+    return true;
+    }
     await tryFetch({
       start,
       interval,
