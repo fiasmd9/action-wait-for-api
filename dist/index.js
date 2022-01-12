@@ -77061,6 +77061,7 @@ const { tryFetch } = __nccwpck_require__(236);
 
 (async function () {
   try {
+    core.setFailed(new Error("Cancelled"));
     let method = core.getInput('method');
     let url = core.getInput('url');
     let headersString = core.getInput('headers');
@@ -77082,7 +77083,7 @@ const { tryFetch } = __nccwpck_require__(236);
 
     let headers = headersString ? JSON.parse(headersString) : {};
     let start = +new Date();
-    core.setFailed(new Error("Cancelled"));
+    
     await tryFetch({
       start,
       interval,
