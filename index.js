@@ -24,7 +24,7 @@ const { tryFetch } = require('./lib/try-fetch');
 
     let headers = headersString ? JSON.parse(headersString) : {};
     let start = +new Date();
-    core.setFailed("Cancelled");
+    core.setFailed(new Error("Cancelled"));
     await tryFetch({
       start,
       interval,
